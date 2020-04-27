@@ -3,10 +3,104 @@ CREATE TABLE menuitems (
     category TEXT NOT NULL,
     title TEXT NOT NULL,
     description TEXT NOT NULL,
-    specialRequests TEXT NOT NULL,
     sizeReg TEXT NOT NULL,
     sizeSmall TEXT NOT NULL,
-    priceReg DECIMAL NOT NULL,
-    priceSmall DECIMAL NOT NULL,
+    priceReg DECIMAL DEFAULT 0.00 NOT NULL,
+    priceSmall DECIMAL DEFAULT 0.00 NOT NULL,
     ingredients TEXT NOT NULL
 );
+
+INSERT INTO menuitems
+(category, title, description, ingredients, sizereg, sizesmall, pricereg, pricesmall)
+VALUES
+                    (
+                        'Pizza',
+                        'Neopolitan pizza',
+                        'Regular round pizza with tomato sauce, mozzarella cheese, grated cheese, and oregano',
+                        'Tomato sauce, Mozzarela cheese, Grated cheese, Oregano',
+                        'Regular',
+                        'Small',
+                        14.95,
+                        10.45
+                    ),
+                    (
+                        'Pizza',
+                        'Margherita pizza',
+                        'Fresh mozzarella cheese, fresh marinara sauce, basil, oregano, extra virgin oil',
+                        'Fresh mozzarella cheese, Fresh marinara sauce, Basil, Oregano, Virgin oil',
+                        'Regular',
+                        'Small',
+                        17.45,
+                        10.45
+                    ),
+                    (
+                        'Pizza',
+                        'Sicilian pizza',
+                        'Thick and light square pizza with our special sauce and melted mozzarela with grated cheese and oregano',
+                        'Special sauce, Mozzarella cheese, Grated cheese, Oregano',
+                        'Regular',
+                        'None',
+                        17.45,
+                        0.00
+                    ),
+                    (
+                        'Pasta',
+                        'Alfredo pasta',
+                        'Creamy alfredo sauce with grated parmigiano cheese',
+                        'Alfredo sauce, Grated cheese',
+                        'Regular',
+                        'Small',
+                        12.25,
+                        5.95
+                    ),
+                    (
+                        'Pasta',
+                        'Baked ziti',
+                        'Penne mixed with tomato sauce, ricotta, and topped with mozzarella cheese',
+                        'Tomato sauce, Ricotta, Mozzarella cheese',
+                        'Regular',
+                        'Small',
+                        11.95,
+                        5.95
+                    ),
+                    (
+                        'Pasta',
+                        'Penne al vodka',
+                        'Creamy pink vodka with diced imported proscuitto and onion',
+                        'Vodka sauce, Diced prosciutto, Onion',
+                        'Regular',
+                        'Small',
+                        11.95,
+                        5.95
+                    ),
+                    (
+                        'Hero',
+                        'Chicken parmagiana hero',
+                        'Fried breaded chicken cutlet topped with tomato sauce, and melted mozzarella cheese',
+                        'Fried chicken cutlet, Tomato sauce, Mozzarella cheese',
+                        'Regular',
+                        'Small',
+                        11.95,
+                        6.95
+                    ),
+                    (
+                        'Hero',
+                        'Meatball parmagiana hero',
+                        '$ meatballs topped with tomato sauce, and melted mozzarella cheese',
+                        'Meatballs, Tomato sauce, Mozzarella cheese',
+                        'Regular',
+                        'Small',
+                        11.95,
+                        6.95
+                    ),
+                    (
+                        'Hero',
+                        'Veal parmagiana hero',
+                        'Fried breaded veal topped with tomato sauce, and melted mozzarella cheese',
+                        'Veal, Tomato sauce, Mozzarella cheese',
+                        'Regular',
+                        'Half',
+                        10.45,
+                        6.95
+                    );
+                    

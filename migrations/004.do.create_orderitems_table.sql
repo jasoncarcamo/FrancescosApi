@@ -9,5 +9,6 @@ CREATE TABLE orderitems (
     priceReg DECIMAL NOT NULL,
     priceSmall DECIMAL NOT NULL,
     ingredients TEXT NOT NULL,
-    quantity INTEGER DEFAULT 1 NOT NULL
+    quantity INTEGER DEFAULT 1 NOT NULL,
+    orderid INTEGER REFERENCES orders(id) ON DELETE CASCADE NOT NULL
 );

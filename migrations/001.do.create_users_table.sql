@@ -7,6 +7,7 @@ CREATE TABLE users (
     state TEXT NOT NULL,
     zipCode TEXT NOT NULL,
     mobileNumber TEXT NOT NULL,
+    email TEXT NOT NULL,
     password VARCHAR(65535) NOT NULL,
     points INTEGER DEFAULT 0 NOT NULL
 );

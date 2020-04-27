@@ -2,14 +2,25 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const {JWT_SECRET} = require("../../config");
 
+function lowercase(obj){
+    let newObj = {
+
+    };
+
+    for( const [key, value] of Object.entries(obj)){
+        newObj.prototype[key] = (key).toString().toLowerCase();
+    };
+    console,log(newObj)
+    return obj;
+}
+
 const UserService = {
     getUser( db, email){
 
-        return db.select("*").from("users").where({ email }).first();
+        return db.select().from("users").where({ email }).first();
     },
     createUser( db, user){
-
-        return db.insert(user).into("users").returning("*").then( ([user]) => user);
+        return db.insert(user).from("users").returning("*").then( ([newUser]) => newUser);
     },
     updateUser( db, updatedUser, id){
 
