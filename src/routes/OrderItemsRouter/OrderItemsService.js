@@ -23,6 +23,7 @@ const OrderItemsService = {
             newItems[i].priceReg = items[i].pricereg;
             newItems[i].priceSmall = items[i].pricesmall;
             newItems[i].ingredients = items[i].ingredients;
+            newItems[i].specialRequests = items[i].specialrequests;
             newItems[i].quantity = items[i].quantity;
             newItems[i].orderId = items[i].orderid;
         };

@@ -1,5 +1,5 @@
 {
-  "name": "express-template",
+  "name": "Francescos-Pizzeria",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,11 @@
     "start": "node ./src/app/server.js",
     "dev": "nodemon ./src/app/server.js",
     "migrate-test": "postgrator --config ./test-migration.js",
-    "migrate-prod": "postgrator --config ./prod/migration.js",
+    "migrate-prod": "postgrator --config ./prod-migration.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "10.16.0"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +25,7 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.0",
     "morgan": "^1.10.0",
-    "pg": "^8.0.3"
+    "pg": "^7.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3",
