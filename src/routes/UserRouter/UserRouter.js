@@ -17,13 +17,13 @@ UserRouter
 
                 return res.status(200).json({
                     user: {
-                        firstName: user.firstName,
-                        lastName: user.lastName,
+                        firstName: user.firstname,
+                        lastName: user.lastname,
                         address: user.address,
                         city: user.city,
                         state: user.state,
-                        zipCode: user.zipCode,
-                        mobileNumber: user.mobileNumber,
+                        zipCode: user.zipcode,
+                        mobileNumber: user.mobilenumber,
                         email: user.email,
                         password: user.password,
                         points: user.points
