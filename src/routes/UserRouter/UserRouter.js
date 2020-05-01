@@ -17,6 +17,7 @@ UserRouter
 
                 return res.status(200).json({
                     user: {
+                        id: user.id,
                         firstName: user.firstname,
                         lastName: user.lastname,
                         address: user.address,
@@ -29,6 +30,30 @@ UserRouter
                         points: user.points
                     }
                 });
+            });
+    });
+
+UserRouter
+    .route("/users/:id")
+    .patch((req, res)=> {
+
+        UserRouterService.getUser( req.app.get("db"), req.params.id)
+            .then( dbUser => {
+
+                if(!dbUser){
+
+                    return res.status(404).json({
+                        error: `User: ${req.params.id}  does not exist.`
+                    });
+                };
+
+                UserRouterService.updateUser( req.app.get("db"), req.body, req.params.id)
+                    .then( updatedUser => {
+
+                        return res.status(200).json({
+                            success: `User: ${req.params.id} has been updated.`
+                        });
+                    });
             });
     });
 
