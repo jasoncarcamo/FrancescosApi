@@ -36,7 +36,6 @@ UserRouter
 UserRouter
     .route("/users/:id")
     .patch((req, res)=> {
-
         UserRouterService.getUser( req.app.get("db"), req.params.id)
             .then( dbUser => {
 
@@ -47,13 +46,31 @@ UserRouter
                     });
                 };
 
-                UserRouterService.updateUser( req.app.get("db"), req.body, req.params.id)
-                    .then( updatedUser => {
+                if(req.body.password != ""){
+                    console.log(true)
+                    return UserRouterService.hashPassword(req.body.password)
+                        .then( hashedPassword => {
+                            req.body.password = hashedPassword;
 
-                        return res.status(200).json({
-                            success: `User: ${req.params.id} has been updated.`
+                            UserRouterService.updateUser( req.app.get("db"), req.body, req.params.id)
+                                .then( updatedUser => {
+
+                                    return res.status(200).json({
+                                        success: `User: ${req.params.id} has been updated.`
+                                    });
+                                });
+                        })
+                } else {
+                    UserRouterService.updateUser( req.app.get("db"), req.body, req.params.id)
+                        .then( updatedUser => {
+
+                            return res.status(200).json({
+                                success: `User: ${req.params.id} has been updated.`
+                            });
                         });
-                    });
+                }
+
+                
             });
     });
 
