@@ -68,9 +68,7 @@ UserRouter
                                 success: `User: ${req.params.id} has been updated.`
                             });
                         });
-                }
-
-                
+                };                
             });
     });
 
